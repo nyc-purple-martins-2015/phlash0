@@ -19,7 +19,7 @@ post '/signup' do
   @user = User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id
-    redirect to('/deck')
+    redirect to('/decks')
   else
     erb :'user/signup'
   end
