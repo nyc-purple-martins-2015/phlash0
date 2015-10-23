@@ -33,6 +33,7 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect to('/decks')
   else
+    @errors = @user.errors.full_messages
     erb :'user/signup'
   end
 end

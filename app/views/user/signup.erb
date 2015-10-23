@@ -1,5 +1,10 @@
 <h1> This is where we sign up </h1>
 
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
 
 <form method='post' action='/signup'>
   <input type='username' name='user[name]' placeholder="username">
