@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_many :rounds
 
-
   def password
     if password_digest.present?
       @password ||= BCrypt::Password.new(password_digest)
