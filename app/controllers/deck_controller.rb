@@ -3,7 +3,7 @@ get '/decks' do
   erb :'decks/index'
 end
 
-get '/' do
+get '/decks/:deck_id' do
 
 end
 
