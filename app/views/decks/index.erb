@@ -1,6 +1,6 @@
 <ul>
 <% @decks.each do |deck| %>
-    <li> <%= deck.title %> </li>
+    <li><a href="/decks/<%=deck.id%>"> <%= deck.title %></a> </li>
 <% end %>
 </ul>
 
