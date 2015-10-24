@@ -1,5 +1,20 @@
 
 <h1> Deck name: <%= @deck.title %> </h1>
+
+<div class="buttons">
+  <form method="post" action="/rounds/<%= @round.id %>">
+    <input type="hidden" name="card" value="<%= @card.id %>" />
+    <input type="hidden" name="is_correct" value="true" />
+    <input type="submit" value="Got It!" />
+  </form>
+
+  <form method="post" action="/rounds/<%= @round.id %>">
+    <input type="hidden" name="card" value="<%= @card.id %>" />
+    <input type="hidden" name="is_correct" value="false" />
+    <input type="submit" value="Not Yet!" />
+  </form>
+</div>
+
 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
   <div class="flipper">
     <div class='front'>
@@ -11,6 +26,4 @@
     </div>
   </div>
 </div>
-
-
 
