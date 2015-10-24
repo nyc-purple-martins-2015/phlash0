@@ -1,0 +1,7 @@
+<% if logged_in? %>
+  <a href='/logout'>Log out</a> ::
+  <%= current_user.name %>
+<% else %>
+  <a href='/login'>Log in</a> ::
+  <a href='/signup'>Sign up</a>
+<% end %>

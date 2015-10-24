@@ -4,18 +4,33 @@ get '/decks' do
 end
 
 get '/decks/:deck_id' do
+  # if logged_in?
+    @round = Round.new(user_id: session[:user_id], deck_id: params[:deck_id])
+    @round.save
+
+    @deck = @round.deck
+    @cards = @deck.cards.to_a
+    @cards.each do |card|
+      Guess.new(round_id: @round.id, card_id: card.id)
+    end
+
+    session[:round_id] = @round.id
+  # end
+
+  redirect to("/rounds/#{@round.id}")
 
 end
 
-post '/' do
 
-end
+# post '/' do
 
-get '/' do
+# end
 
-end
+# get '/' do
 
-get '/' do
-  erb :''
-end
+# end
+
+# get '/' do
+#   erb :''
+# end
 
