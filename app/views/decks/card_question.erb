@@ -1,0 +1,6 @@
+<div class="card">
+  <%= @question %>
+  <a href=<%= "/decks/#{@deck.deck_id}/cards/#{@card.id}/answer" %>>
+    <input type="submit" value="answer" />
+  </a>
+</div>
