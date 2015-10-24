@@ -1,7 +1,6 @@
-<% @guesses.each do |guess| %>
-  <%= guess.is_correct? %>
-<% end %>
-
-<%= @guesses.to_a %>
-
 <h1> This is the stats </h1>
+
+
+<h3> You finished! You guessed a total of <%= @round.guesses.count %> </h3>
+<h3> You guessed <%= @round.guesses.where(times_guessed: 1).count %> Correct on the first try. </h3>
+

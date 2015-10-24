@@ -20,6 +20,13 @@ end
 
 post '/rounds/:id' do
   @guess = Guess.where(round_id: params[:id]).where(card_id: params[:card])
+  # if params[:is_correct] == "false"
+  #   @status = false
+  # else
+  #   @status = true
+  # end
   @guess.first[:is_correct] = params[:is_correct]
+  @guess.first[:times_guessed] += 1
+  @guess.first.save
   redirect "/rounds/#{params[:id]}"
 end
