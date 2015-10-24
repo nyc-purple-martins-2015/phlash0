@@ -3,17 +3,13 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by(email: params[:user][:email])
-  if !@user.nil?
-    if @user.password == params[:password]
-      session[:user_id] = @user.id
-      redirect '/'
-    else
-      erb :'/user/login'
-    end
+  user_params = params[:user]
+  user = User.find_by(email: user_params[:email])
+  if user && user.password == user_params[:password]
+    session[:user_id] = user.id
+    redirect '/'
   else
-    # @errors = @user.errors.full_messages
-    erb :'/user/login'
+    redirect '/login'
   end
 end
 
@@ -28,11 +24,12 @@ end
 
 
 post '/signup' do
-  @user = User.new(params[:user])
-  if @user.save
-    session[:user_id] = @user.id
+  user = User.new(params[:user])
+  if user.save
+    session[:user_id] = user.id
     redirect to('/decks')
   else
+    @errors = user.errors.full_messages
     erb :'user/signup'
   end
 end
