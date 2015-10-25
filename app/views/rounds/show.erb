@@ -1,31 +1,33 @@
-<h1> Deck name: <%= @deck.title %> </h1>
+<div class="container">
+  <h2> Deck name: <%= @deck.title %> </h2>
 
-<div class="buttons">
-  <form method="post" action="/rounds/<%= @round.id %>">
-    <input type="hidden" name="card" value="<%= @card.id %>" />
-    <input type="hidden" name="is_correct" value="<%=true%>" />
-    <input type="submit" value="Got It!" style="border-radius: 10px; background-color: #99FF99" />
-  </form>
-</div>
+  <div class="buttons">
+    <form method="post" action="/rounds/<%= @round.id %>">
+      <input type="hidden" name="card" value="<%= @card.id %>" />
+      <input type="hidden" name="is_correct" value="<%=true%>" />
+      <input type="submit" value="Got It!" style="border-radius: 10px; background-color: #99FF99" />
+    </form>
+  </div>
 
-<div class='buttons'>
-  <form method="post" action="/rounds/<%= @round.id %>">
-    <input type="hidden" name="card" value="<%= @card.id %>" />
-    <input type="hidden" name="is_correct" value="<%=false %>" />
-    <input type="submit" value="Not Yet!" style="border-radius: 10px; background-color: #FF6666"/>
-  </form>
-</div>
+  <div class='buttons'>
+    <form method="post" action="/rounds/<%= @round.id %>">
+      <input type="hidden" name="card" value="<%= @card.id %>" />
+      <input type="hidden" name="is_correct" value="<%=false %>" />
+      <input type="submit" value="Not Yet!" style="border-radius: 10px; background-color: #FF6666"/>
+    </form>
+  </div>
 
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-  <div class="flipper">
-    <div class='front'>
-      <h2> Question: </h2>
-      <h2> <%= @card.question %> </h2>
-    </div>
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper">
+      <div class='front'>
+        <h5> Question: </h5>
+        <h5> <%= @card.question %> </h5>
+      </div>
 
-    <div class='back'>
-      <h2> Answer: </h2>
-      <h2> <%= @card.answer %> </h2>
+      <div class='back'>
+        <h5> Answer: </h5>
+        <h5> <%= @card.answer %> </h5>
+      </div>
     </div>
   </div>
 </div>

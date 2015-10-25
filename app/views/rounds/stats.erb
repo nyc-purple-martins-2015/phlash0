@@ -1,6 +1,7 @@
-<h1> This is the stats </h1>
+<div class='container'>
+  <h2> Statistics </h2>
 
 
-<h3> You finished! You guessed a total of <%= @round.guesses.count %> </h3>
-<h3> You guessed <%= @round.guesses.where(times_guessed: 1).count %> Correct on the first try. </h3>
-
+  <h5> You finished! You guessed a total of <%= @round.guesses.count %> </h5>
+  <h5> You guessed <%= @round.guesses.where(times_guessed: 1).count %> Correct on the first try. </h5>
+</div>
