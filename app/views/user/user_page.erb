@@ -1,0 +1,5 @@
+<% current_user.rounds.each do |round| %>
+  <p>deck title:<%= round.deck.title %></p>
+  <p>times guessed:<%= round.guesses.count %></p>
+  <p>first time guessed: <%= round.guesses.where(times_guessed: 1).count %></p>
+<% end %>
