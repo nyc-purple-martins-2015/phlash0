@@ -34,4 +34,9 @@ post '/signup' do
   end
 end
 
+get '/user/:user_id/user_page' do
+  erb :'/user/user_page'
+end
+
+
 
