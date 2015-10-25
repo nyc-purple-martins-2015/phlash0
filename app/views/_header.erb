@@ -1,6 +1,7 @@
 <% if logged_in? %>
   <a href='/logout'>Log out</a> ::
   <a href="/user/<%= current_user.id %>/user_page"><%= current_user.name %></a>
+  <a href="/decks/new"> Create Deck </a>
 <% else %>
   <a href='/login'>Log in</a> ::
   <a href='/signup'>Sign up</a>
