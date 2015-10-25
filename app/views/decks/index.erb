@@ -1,3 +1,9 @@
+<p>
+  <% if !logged_in? %>
+    <%= "Stats won't be shown unless you are logged in" %>
+  <% end %>
+</p>
+
 <ul>
 <% @decks.each do |deck| %>
     <li><a href="/decks/<%=deck.id%>"> <%= deck.title %></a> </li>
