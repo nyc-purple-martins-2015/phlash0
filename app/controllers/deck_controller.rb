@@ -3,6 +3,17 @@ get '/decks' do
   erb :'decks/index'
 end
 
+get '/decks/new' do
+  erb :'/user/create_deck'
+end
+
+post '/decks/new' do
+  @deck = Deck.create(title: params[:deck][:title], user_id: session[:user_id])
+  @deck_id = @deck.id
+  erb :'/card/new'
+end
+
+
 get '/decks/:deck_id' do
   if logged_in?
     @round = Round.new(user_id: session[:user_id], deck_id: params[:deck_id])
@@ -21,3 +32,4 @@ get '/decks/:deck_id' do
     session[:round_id] = @round.id
     redirect to("/rounds/#{@round.id}")
 end
+
