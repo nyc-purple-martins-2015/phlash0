@@ -1,13 +1,41 @@
+/* ------------------------------------------------ */
+/* ---------------Main Header---------------------- */
+/* ------------------------------------------------ */
+
+.header {
+  background-color: #00b3ca;
+}
+
+.header img {
+  margin-left: 20px;
+}
+.header a {
+  float: right;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #1d4e89;
+  font-size: 35px;
+  font-family: fantasy;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+/* ------------------------------------------------ */
+/* ---------------Card flipping-------------------- */
+/* ------------------------------------------------ */
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000;
 }
   /* flip the pane when hovered */
   .flip-container:hover .flipper, .flip-container.hover .flipper {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
 
 .flip-container, .front, .back {
+  margin-left: 30%;
   width: 320px;
   height: 480px;
 }
@@ -16,14 +44,23 @@
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
+  transform-origin: 100% 105px;
   position: relative;
 }
 
 /* hide back of pane during swap */
-.front, .back {
-  backface-visibility: hidden;
+.front {
+  background-color: #7dd0b6;
+}
 
+.back {
+  background-color: #00b3ca;
+}
+.front, .back {
+
+  backface-visibility: hidden;
+  border: 5px solid black;
+  height: 200px;
   position: absolute;
   top: 0;
   left: 0;
@@ -33,10 +70,18 @@
 .front {
   z-index: 2;
   /* for firefox 31 */
-  transform: rotateY(0deg);
+  transform: rotateX(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
+
+.buttons {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 45%;
+
+}
+
