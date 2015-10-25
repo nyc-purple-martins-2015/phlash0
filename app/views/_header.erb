@@ -1,17 +1,17 @@
 <div class='header'>
-<% if logged_in? %>
-  <img src='/logo.png' alt='Phlash 0' style="width:128px;height:128px";>
-  <a href='/logout'>Log out</a>
-  <a href="/user/<%= current_user.id %>/user_page"><%= current_user.name %></a>
-  <a href="/decks/new"> Create Deck </a>
+  <% if logged_in? %>
+    <img src='/logo.png' alt='Phlash 0' style="width:128px;height:128px";>
+    <a href='/logout'>Log out</a>
+    <a href="/user/<%= current_user.id %>/user_page"><%= current_user.name %></a>
+    <a href="/decks/new"> Create Deck </a>
 
-  <a href='/decks'> Home </a>
+    <a href='/decks'> Home </a>
 
-<% else %>
+  <% else %>
+    <img src='/logo.png' alt='Phlash 0' style="width:128px;height:128px";>
+    <a href='/login'>Log in</a>
+    <a href='/signup'>Sign up</a>
+    <a href='/decks'> Decks </a>
 
-  <a href='/login'>Log in</a>
-  <a href='/signup'>Sign up</a>
-  <a href='/decks'> Decks </a>
-
-<% end %>
+  <% end %>
 </div>

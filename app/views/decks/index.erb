@@ -1,12 +1,15 @@
-<p>
-  <% if !logged_in? %>
-    <%= "Stats won't be shown unless you are logged in" %>
+<div class='container'>
+  <h3> Phase 0 Phlashcards </h3>
+  <h4> Pick a deck and get started today! </h4>
+  <p>
+    <% if !logged_in? %>
+      <%= "Stats won't be shown unless you are logged in" %>
+    <% end %>
+  </p>
+
+  <ul>
+  <% @decks.each do |deck| %>
+      <li><a href="/decks/<%=deck.id%>"> <%= deck.title %></a> </li>
   <% end %>
-</p>
-
-<ul>
-<% @decks.each do |deck| %>
-    <li><a href="/decks/<%=deck.id%>"> <%= deck.title %></a> </li>
-<% end %>
-</ul>
-
+  </ul>
+</div>

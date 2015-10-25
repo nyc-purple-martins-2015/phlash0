@@ -1,13 +1,15 @@
-<h1> Here is where you can create a new card! </h1>
+<div class='container'>
+  <h2> Here is where you can create a new card! </h2>
 
-<form method='post' action='/cards/new'>
-  <input type='text' name='card[question]' placeholder='Question'>
-  <input type='text' name='card[answer]' placeholder='Answer'>
-  <input type='hidden' name='card[deck_id]' value='<%= @deck_id %>'>
-  <input type='submit' value='Create Card'>
-</form>
+  <form method='post' action='/cards/new'>
+    <input type='text' name='card[question]' placeholder='Question'>
+    <input type='text' name='card[answer]' placeholder='Answer'>
+    <input type='hidden' name='card[deck_id]' value='<%= @deck_id %>'>
+    <input type='submit' value='Create Card'>
+  </form>
 
-<form method='get' action='/decks'>
-  <input type='submit' value='Finish Deck!'>
-</form>
+  <form method='get' action='/decks'>
+    <input type='submit' value='Finish Deck!'>
+  </form>
+</div>
 
