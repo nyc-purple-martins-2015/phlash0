@@ -119,8 +119,8 @@ body {
   }
 
 .flip-container, .front, .back {
-  margin-left: 10%;
-  width: 320px;
+  margin-left: 5px;
+  width: 300px;
   height: 480px;
 
 }
